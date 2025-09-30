@@ -1,4 +1,3 @@
-import { FaP } from "react-icons/fa6";
 import "./Header.css";
 import {
   FaGraduationCap,

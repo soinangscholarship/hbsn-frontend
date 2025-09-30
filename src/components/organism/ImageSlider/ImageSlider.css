@@ -7,7 +7,6 @@
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   background: #eee;
-  /* Bỏ flex ở đây */
 }
 
 .slider-img {
@@ -34,7 +33,6 @@
   outline: none;
   border: 1.5px solid #e0e0e0;
   opacity: 0.5;
-  /* Đảm bảo không bị ảnh hưởng bởi flex */
   display: flex;
   align-items: center;
   justify-content: center;
