@@ -1,0 +1,58 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "activities": "Activities"
+  },
+  "hero": {
+    "title": "Sợi Nắng Scholarship",
+    "subtitle": "Nurturing resilient young talents through comprehensive support and mentorship",
+    "learnMore": "Learn More",
+    "applyNow": "Apply Now"
+  },
+  "mission": {
+    "title": "Our Mission",
+    "description": "The Soi Nang scholarship program is dedicated to identifying, nurturing, and empowering resilient young talents through providing financial aid to cultivate an ecosystem for holistic growth, where scholars are fortified by unwavering mentorship and support."
+  },
+  "features": {
+    "title": "What We Offer",
+    "financialSupport": {
+      "title": "Financial Support",
+      "description": "Comprehensive financial aid for education and development"
+    },
+    "mentorship": {
+      "title": "Mentorship",
+      "description": "Personal guidance and support from experienced mentors"
+    },
+    "holisticGrowth": {
+      "title": "Holistic Growth",
+      "description": "Development programs for personal and professional growth"
+    }
+  },
+  "footer": {
+    "brand": {
+      "title": "Sợi Nắng Scholarship",
+      "subtitle": "Nguyễn Hiền Foundation",
+      "description": "Nurturing resilient young talents through comprehensive support and mentorship"
+    },
+    "contact": {
+      "title": "Contact Information",
+      "phone": "0123 456 789",
+      "email": "contact.hbsn@nguyenhienfoundation.org",
+      "address": "Ho Chi Minh City, Vietnam"
+    },
+    "social": {
+      "title": "Follow Us"
+    },
+    "bottom": {
+      "copyright": "© 2025 Sợi Nắng Scholarship - Nguyễn Hiền Foundation. All rights reserved.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
+  },
+  "language": {
+    "switch": "Switch Language",
+    "english": "English",
+    "vietnamese": "Tiếng Việt"
+  }
+}

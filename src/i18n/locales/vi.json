@@ -1,0 +1,58 @@
+{
+  "navbar": {
+    "home": "Trang Chủ",
+    "about": "Giới Thiệu",
+    "activities": "Hoạt Động"
+  },
+  "hero": {
+    "title": "Học Bổng Sợi Nắng",
+    "subtitle": "Nuôi dưỡng những tài năng trẻ kiên cường thông qua hỗ trợ toàn diện và cố vấn",
+    "learnMore": "Tìm Hiểu Thêm",
+    "applyNow": "Đăng Ký Ngay"
+  },
+  "mission": {
+    "title": "Sứ Mệnh Của Chúng Tôi",
+    "description": "Chương trình học bổng Sợi Nắng cam kết xác định, nuôi dưỡng và trao quyền cho những tài năng trẻ kiên cường thông qua việc cung cấp hỗ trợ tài chính để xây dựng một hệ sinh thái phát triển toàn diện, nơi các học viên được củng cố bởi sự cố vấn và hỗ trợ không ngừng."
+  },
+  "features": {
+    "title": "Những Gì Chúng Tôi Cung Cấp",
+    "financialSupport": {
+      "title": "Hỗ Trợ Tài Chính",
+      "description": "Hỗ trợ tài chính toàn diện cho giáo dục và phát triển"
+    },
+    "mentorship": {
+      "title": "Cố Vấn",
+      "description": "Hướng dẫn và hỗ trợ cá nhân từ các cố vấn giàu kinh nghiệm"
+    },
+    "holisticGrowth": {
+      "title": "Phát Triển Toàn Diện",
+      "description": "Các chương trình phát triển cho sự phát triển cá nhân và nghề nghiệp"
+    }
+  },
+  "footer": {
+    "brand": {
+      "title": "Học Bổng Sợi Nắng",
+      "subtitle": "Quỹ Nguyễn Hiền",
+      "description": "Nuôi dưỡng những tài năng trẻ kiên cường thông qua hỗ trợ toàn diện và cố vấn"
+    },
+    "contact": {
+      "title": "Thông Tin Liên Hệ",
+      "phone": "0123 456 789",
+      "email": "contact.hbsn@nguyenhienfoundation.org",
+      "address": "Thành phố Hồ Chí Minh, Việt Nam"
+    },
+    "social": {
+      "title": "Theo Dõi Chúng Tôi"
+    },
+    "bottom": {
+      "copyright": "© 2025 Học Bổng Sợi Nắng - Quỹ Nguyễn Hiền. Tất cả quyền được bảo lưu.",
+      "privacy": "Chính Sách Bảo Mật",
+      "terms": "Điều Khoản Dịch Vụ"
+    }
+  },
+  "language": {
+    "switch": "Chuyển Đổi Ngôn Ngữ",
+    "english": "English",
+    "vietnamese": "Tiếng Việt"
+  }
+}
