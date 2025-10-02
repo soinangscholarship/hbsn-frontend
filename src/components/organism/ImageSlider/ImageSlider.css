@@ -7,6 +7,13 @@
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   background: #eee;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.slider-wrapper:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
 }
 
 .slider-img {
@@ -14,35 +21,43 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: all 0.5s ease;
+  transform: scale(1);
+}
+
+.slider-img:hover {
+  transform: scale(1.05);
 }
 
 .slider-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.8);
   border: none;
   font-size: 1.3rem;
   color: #008fe5;
   cursor: pointer;
   z-index: 2;
-  padding: 4px 8px;
+  padding: 8px 12px;
   border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s, opacity 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
   outline: none;
-  border: 1.5px solid #e0e0e0;
-  opacity: 0.5;
+  border: 2px solid rgba(0, 143, 229, 0.2);
+  opacity: 0.7;
   display: flex;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(10px);
 }
 
 .slider-btn:hover {
-  background: #a6bbec;
+  background: #008fe5;
   color: #fff;
-  box-shadow: 0 4px 16px rgba(0, 143, 229, 0.15);
-  opacity: 0.7;
+  box-shadow: 0 6px 20px rgba(0, 143, 229, 0.3);
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .slider-btn.left {
@@ -50,4 +65,49 @@
 }
 .slider-btn.right {
   right: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .slider-wrapper {
+    max-width: 800px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-wrapper {
+    max-width: 100%;
+    height: 300px;
+    margin: 0 16px;
+    border-radius: 8px;
+  }
+  .slider-btn {
+    padding: 6px 10px;
+    font-size: 1.1rem;
+  }
+  .slider-btn.left {
+    left: 8px;
+  }
+  .slider-btn.right {
+    right: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-wrapper {
+    height: 250px;
+    margin: 0 8px;
+    border-radius: 6px;
+  }
+  .slider-btn {
+    padding: 4px 8px;
+    font-size: 1rem;
+  }
+  .slider-btn.left {
+    left: 4px;
+  }
+  .slider-btn.right {
+    right: 4px;
+  }
 }
