@@ -23,7 +23,6 @@ const Footer: React.FC = () => {
             <FaGraduationCap className="footer-logo-icon" />
             <div className="footer-brand-text">
               <h3>{t('footer.brand.title')}</h3>
-              <p>{t('footer.brand.subtitle')}</p>
             </div>
           </div>
           <p className="footer-description">
