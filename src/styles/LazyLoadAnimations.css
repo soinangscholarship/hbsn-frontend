@@ -1,0 +1,222 @@
+/* Lazy Load Animation Base */
+.lazy-fadeIn {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lazy-fadeIn-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lazy-slideUp {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lazy-slideUp-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lazy-slideLeft {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lazy-slideLeft-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.lazy-slideRight {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lazy-slideRight-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.lazy-scale {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lazy-scale-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.lazy-rotate {
+  opacity: 0;
+  transform: rotate(-10deg) scale(0.9);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lazy-rotate-visible {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* Sunshine Animation - Special for Sợi Nắng */
+.lazy-sunshine {
+  opacity: 0;
+  transform: translateY(30px) scale(0.9);
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.lazy-sunshine::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, 
+    transparent 30%, 
+    rgba(255, 215, 0, 0.1) 50%, 
+    transparent 70%);
+  transform: rotate(-45deg) translateX(-100%);
+  transition: transform 1.5s ease;
+  z-index: 1;
+}
+
+.lazy-sunshine-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.lazy-sunshine-visible::before {
+  transform: rotate(-45deg) translateX(100%);
+}
+
+/* Ray of Light Effect */
+.ray-of-light {
+  position: relative;
+  overflow: hidden;
+}
+
+.ray-of-light::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 215, 0, 0.3), 
+    rgba(255, 107, 53, 0.2), 
+    transparent);
+  animation: raySweep 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes raySweep {
+  0%, 100% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+}
+
+/* Sunshine Particles */
+.sunshine-particles {
+  position: relative;
+}
+
+.sunshine-particles::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 215, 0, 0.8), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255, 107, 53, 0.6), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 215, 0, 0.9), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(255, 107, 53, 0.7), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(255, 215, 0, 0.5), transparent);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: particlesFloat 8s linear infinite;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.sunshine-particles.lazy-sunshine-visible::before {
+  opacity: 1;
+}
+
+@keyframes particlesFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-200px) translateX(50px);
+  }
+}
+
+/* Golden Glow Effect */
+.golden-glow {
+  position: relative;
+}
+
+.golden-glow::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, 
+    rgba(255, 215, 0, 0.3), 
+    rgba(255, 107, 53, 0.2), 
+    rgba(255, 215, 0, 0.3));
+  border-radius: inherit;
+  filter: blur(15px);
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: -1;
+}
+
+.golden-glow.lazy-sunshine-visible::before {
+  opacity: 1;
+}
+
+/* Staggered Animation Delays */
+.lazy-stagger-1 { transition-delay: 0.1s; }
+.lazy-stagger-2 { transition-delay: 0.2s; }
+.lazy-stagger-3 { transition-delay: 0.3s; }
+.lazy-stagger-4 { transition-delay: 0.4s; }
+.lazy-stagger-5 { transition-delay: 0.5s; }
+.lazy-stagger-6 { transition-delay: 0.6s; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .lazy-fadeIn,
+  .lazy-slideUp,
+  .lazy-slideLeft,
+  .lazy-slideRight {
+    transform: translateY(20px);
+  }
+  
+  .lazy-slideLeft {
+    transform: translateX(-30px);
+  }
+  
+  .lazy-slideRight {
+    transform: translateX(30px);
+  }
+}

@@ -1,0 +1,109 @@
+.sun-container {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+  overflow: visible;
+  filter: drop-shadow(0 0 50px rgba(255, 220, 0, 0.9));
+}
+
+.sun {
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, #fff9b0 0%, #ffd700 45%, #ff9900 100%);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 3;
+  box-shadow: 0 0 120px 40px rgba(255, 220, 0, 0.7);
+  animation: sunPulse 2s infinite ease-in-out;
+}
+
+@keyframes sunPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 100px 35px rgba(255, 230, 100, 0.8);
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 140px 60px rgba(255, 250, 150, 1);
+  }
+}
+
+.sun-glow {
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 220, 0, 0.4) 0%, rgba(255, 220, 0, 0) 70%);
+  z-index: 1;
+}
+
+.sun-ray {
+  position: absolute;
+  width: 14px;
+  height: 100px;
+  background: linear-gradient(to top, rgba(255, 230, 0, 1), rgba(255, 150, 0, 0));
+  border-radius: 10px;
+  transform-origin: bottom center;
+  opacity: 0;
+  z-index: 2;
+  filter: blur(0.5px);
+  box-shadow: 0 0 20px rgba(255, 200, 0, 0.9);
+}
+
+.sun-container:hover .sun {
+  transform: scale(1.1);
+  box-shadow: 0 0 150px 60px rgba(255, 240, 120, 1);
+}
+
+@media (max-width: 768px) {
+  .sun-container {
+    width: 250px;
+    height: 250px;
+    margin: 50px auto;
+  }
+  
+  .sun {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .sun-glow {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .sun-ray {
+    width: 10px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sun-container {
+    width: 200px;
+    height: 200px;
+    margin: 30px auto;
+  }
+  
+  .sun {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .sun-glow {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .sun-ray {
+    width: 8px;
+    height: 60px;
+  }
+}
