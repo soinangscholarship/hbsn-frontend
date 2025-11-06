@@ -2,7 +2,8 @@
   "navbar": {
     "home": "Trang Chủ",
     "about": "Giới Thiệu",
-    "activities": "Hoạt Động"
+    "activities": "Hoạt Động",
+    "scholarship": "Học Bổng"
   },
   "hero": {
     "title": "Học Bổng Sợi Nắng",
@@ -38,7 +39,7 @@
     "contact": {
       "title": "Thông Tin Liên Hệ",
       "phone": "0123 456 789",
-      "email": "contact.hbsn@nguyenhienfoundation.org",
+      "email": "hbsoinang@nguyenhienfoundation.org",
       "address": "Thành phố Hồ Chí Minh, Việt Nam"
     },
     "social": {

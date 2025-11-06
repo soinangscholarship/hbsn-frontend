@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./NavBar.css";
 import hbsnLogo from "../../../assets/hbsn-logo.jpg";
@@ -6,36 +6,44 @@ import LanguageSwitcher from "../../common/LanguageSwitcher/LanguageSwitcher";
 
 const NavBar: React.FC = () => {
   const { t } = useTranslation();
+  const location = useLocation(); // lấy đường dẫn hiện tại
+
+  const links = [
+    { to: "/home", label: t('navbar.home') },
+    { to: "/about", label: t('navbar.about') },
+    { to: "/scholarship", label: t('navbar.scholarship') },
+    { to: "/activities", label: t('navbar.activities') },
+  ];
 
   return (
     <>
-      {/* Top navbar with logo and brand */}
+      {/* Top navbar */}
       <nav className="navbar-top">
         <div className="navbar-logo-group">
-          <Link to="/">
+          <Link to="/home">
             <img src={hbsnLogo} alt="HBSN Logo" className="navbar-logo" />
           </Link>
           <span className="navbar-brand">
-            <span className="brand-highlight">Sợi Nắng</span> Scholarship
+            <span className="brand-highlight">Sợi Nắng</span>
           </span>
         </div>
         <div className="navbar-right">
           <LanguageSwitcher />
         </div>
       </nav>
-      
+
       {/* Navigation menu */}
       <nav className="navbar-menu">
         <div className="navbar-links">
-          <Link to="/" className="navbar-link">
-            {t('navbar.home')}
-          </Link>
-          <Link to="/about" className="navbar-link">
-            {t('navbar.about')}
-          </Link>
-          <Link to="/activities" className="navbar-link">
-            {t('navbar.activities')}
-          </Link>
+          {links.map(link => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className={`navbar-link${location.pathname === link.to ? " active" : ""}`}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       </nav>
     </>
