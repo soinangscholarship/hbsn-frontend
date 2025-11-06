@@ -2,7 +2,8 @@
   "navbar": {
     "home": "Home",
     "about": "About",
-    "activities": "Activities"
+    "activities": "Activities",
+    "scholarship": "Scholarship"
   },
   "hero": {
     "title": "Sợi Nắng Scholarship",
@@ -31,21 +32,21 @@
   },
   "footer": {
     "brand": {
-      "title": "Sợi Nắng Scholarship",
+      "title": "Sợi Nắng Family",
       "subtitle": "Nguyễn Hiền Foundation",
       "description": "Nurturing resilient young talents through comprehensive support and mentorship"
     },
     "contact": {
       "title": "Contact Information",
       "phone": "0123 456 789",
-      "email": "contact.hbsn@nguyenhienfoundation.org",
+      "email": "hbsoinang@nguyenhienfoundation.org",
       "address": "Ho Chi Minh City, Vietnam"
     },
     "social": {
       "title": "Follow Us"
     },
     "bottom": {
-      "copyright": "© 2025 Sợi Nắng Scholarship. All rights reserved.",
+      "copyright": "© 2025 Sợi Nắng Family. All rights reserved.",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service"
     }
