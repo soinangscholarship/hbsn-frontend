@@ -3,6 +3,48 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './OrganizationPage.css';
 
+interface NodeData {
+    role: string;
+    name: string;
+    children?: NodeData[];
+}
+
+const TreeNode: React.FC<{ node: NodeData; depth: number }> = ({ node, depth }) => {
+    // Helper to get initials
+    const getInitials = (name: string) => {
+        return name
+            .split(' ')
+            .map(n => n[0])
+            .join('')
+            .toUpperCase()
+            .slice(0, 2);
+    };
+
+    return (
+        <li>
+            <div
+                className="node-card"
+                style={{ '--delay': `${depth * 0.4}s` } as React.CSSProperties}
+            >
+                <div className="node-avatar">
+                    {getInitials(node.name)}
+                </div>
+                <div className="node-info">
+                    <span className="node-role">{node.role}</span>
+                    <span className="node-name">{node.name}</span>
+                </div>
+            </div>
+            {node.children && node.children.length > 0 && (
+                <ul>
+                    {node.children.map((child, index) => (
+                        <TreeNode key={index} node={child} depth={depth + 1} />
+                    ))}
+                </ul>
+            )}
+        </li>
+    );
+};
+
 const OrganizationPage: React.FC = () => {
     const { t } = useTranslation();
 
@@ -16,48 +58,30 @@ const OrganizationPage: React.FC = () => {
 
                 <div className="tree">
                     <ul>
-                        <li>
-                            <div className="node-card">
-                                <span className="node-role">Board of Directors</span>
-                                <span className="node-name">Nguyen Hien Foundation</span>
-                            </div>
-                            <ul>
-                                <li>
-                                    <div className="node-card">
-                                        <span className="node-role">Director</span>
-                                        <span className="node-name">Nguyen Van A</span>
-                                    </div>
-                                    <ul>
-                                        <li>
-                                            <div className="node-card">
-                                                <span className="node-role">Finance</span>
-                                                <span className="node-name">Tran Thi B</span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="node-card">
-                                                <span className="node-role">Operations</span>
-                                                <span className="node-name">Le Van C</span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <div className="node-card">
-                                        <span className="node-role">Sponsorship</span>
-                                        <span className="node-name">Pham Thi D</span>
-                                    </div>
-                                    <ul>
-                                        <li>
-                                            <div className="node-card">
-                                                <span className="node-role">Marketing</span>
-                                                <span className="node-name">Hoang Van E</span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
+                        <TreeNode
+                            node={{
+                                role: 'Board of Directors',
+                                name: 'Nguyen Hien Foundation',
+                                children: [
+                                    {
+                                        role: 'Director',
+                                        name: 'Nguyen Van A',
+                                        children: [
+                                            { role: 'Finance', name: 'Tran Thi B' },
+                                            { role: 'Operations', name: 'Le Van C' }
+                                        ]
+                                    },
+                                    {
+                                        role: 'Sponsorship',
+                                        name: 'Pham Thi D',
+                                        children: [
+                                            { role: 'Marketing', name: 'Hoang Van E' }
+                                        ]
+                                    }
+                                ]
+                            }}
+                            depth={0}
+                        />
                     </ul>
                 </div>
             </div>

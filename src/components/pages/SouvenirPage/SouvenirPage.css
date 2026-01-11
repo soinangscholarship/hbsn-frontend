@@ -9,23 +9,30 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
+    box-sizing: border-box;
 }
 
 .souvenir-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .souvenir-title {
-    font-size: 2.5rem;
-    color: #1a202c;
-    margin-bottom: 16px;
-    font-weight: 700;
+    font-size: 2.75rem;
+    background: linear-gradient(to right, #1e293b, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
 }
 
 .souvenir-subtitle {
     font-size: 1.1rem;
-    color: #718096;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
 .souvenir-grid {

@@ -1,185 +1,264 @@
+/* Main Layout */
 .organization-page {
-    /* padding-top: 100px; */
     min-height: 100vh;
-    background-color: #f8fafc;
-    padding-bottom: 60px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    padding-bottom: 80px;
+    overflow-x: hidden;
 }
 
 .org-container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 24px;
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .org-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .org-title {
-    font-size: 2.5rem;
-    color: #1a202c;
-    margin-bottom: 16px;
-    font-weight: 700;
+    font-size: 2.75rem;
+    background: linear-gradient(to right, #1e293b, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
 }
 
 .org-subtitle {
     font-size: 1.1rem;
-    color: #718096;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
-/* Tree CSS */
+/* Tree Scroll Wrapper */
+.tree {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px;
+    /* Custom Scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+.tree::-webkit-scrollbar {
+    height: 8px;
+}
+
+.tree::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.tree::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 20px;
+}
+
+/* Tree Layout */
 .tree ul {
-    padding-top: 20px;
+    padding-top: 40px;
     position: relative;
     transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
     display: flex;
     justify-content: center;
+    /* Important for strict alignment: */
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    margin: 0;
 }
 
 .tree li {
-    float: left;
     text-align: center;
     list-style-type: none;
     position: relative;
-    padding: 20px 5px 0 5px;
+    padding: 40px 10px 0 10px;
+    /* Top padding is key for vertical spacing */
     transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
 }
 
-/* We will use ::before and ::after to draw the connectors */
+/* Connectors */
 .tree li::before,
 .tree li::after {
     content: '';
     position: absolute;
     top: 0;
     right: 50%;
-    border-top: 2px solid #ccc;
+    border-top: 2px solid #cbd5e1;
     width: 50%;
-    height: 20px;
+    height: 40px;
+    /* Matches top padding */
+    transition: all 0.3s;
 }
 
 .tree li::after {
     right: auto;
     left: 50%;
-    border-left: 2px solid #ccc;
+    border-left: 2px solid #cbd5e1;
 }
 
-/* We need to remove left-right connectors from elements without 
-any siblings */
 .tree li:only-child::after,
 .tree li:only-child::before {
     display: none;
 }
 
-/* Remove space from the top of single children */
 .tree li:only-child {
     padding-top: 0;
 }
 
-/* Remove left connector from first child and 
-right connector from last child */
 .tree li:first-child::before,
 .tree li:last-child::after {
     border: 0 none;
 }
 
-/* Adding back the vertical connector to the last nodes */
 .tree li:last-child::before {
-    border-right: 2px solid #ccc;
-    border-radius: 0 5px 0 0;
-    -webkit-border-radius: 0 5px 0 0;
-    -moz-border-radius: 0 5px 0 0;
+    border-right: 2px solid #cbd5e1;
+    border-radius: 0 12px 0 0;
 }
 
 .tree li:first-child::after {
-    border-radius: 5px 0 0 0;
-    -webkit-border-radius: 5px 0 0 0;
-    -moz-border-radius: 5px 0 0 0;
+    border-radius: 12px 0 0 0;
 }
 
-/* Time to add downward connectors from parents */
 .tree ul ul::before {
     content: '';
     position: absolute;
     top: 0;
     left: 50%;
-    border-left: 2px solid #ccc;
+    border-left: 2px solid #cbd5e1;
     width: 0;
-    height: 20px;
+    height: 40px;
 }
 
-.tree li div.node-card {
-    border: 1px solid #ccc;
-    padding: 20px;
+/* Card Animation */
+@keyframes bloom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Node Card Styles */
+.tree li .node-card {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 24px 20px;
     text-decoration: none;
-    font-family: arial, verdana, tahoma;
-    font-size: 14px;
-    display: inline-block;
-    background: white;
-    border-radius: 12px;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    min-width: 150px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -1px rgba(0, 0, 0, 0.03),
+        0 0 0 1px rgba(0, 0, 0, 0.02);
+
+    width: 240px;
+    /* Slightly wider for better text fit */
+    height: 140px;
+    /* Fixed height for alignment */
+
+    opacity: 0;
+    /* Hidden initially */
+    animation: bloom 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: var(--delay, 0s);
+
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
 }
 
-/* Time for some hover effects */
-/* We will apply the hover effect the the lineage of the element also */
-.tree li div.node-card:hover,
-.tree li div.node-card:hover+ul li div.node-card {
-    background: #c8e4f8;
-    color: #000;
-    border: 1px solid #94a0b4;
+/* Avatar Circle */
+.node-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
 }
 
-/*Connector styles on hover*/
-.tree li div.node-card:hover+ul li::after,
-.tree li div.node-card:hover+ul li::before,
-.tree li div.node-card:hover+ul::before,
-.tree li div.node-card:hover+ul ul::before {
-    border-color: #94a0b4;
+.node-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .node-role {
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: #2d3748;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #1e293b;
     margin-bottom: 4px;
-    display: block;
+    text-align: center;
+    line-height: 1.3;
 }
 
 .node-name {
-    color: #718096;
-    font-size: 0.9rem;
+    color: #64748b;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
 }
 
-/* Responsive adjustment for tree */
+/* Hover Effects */
+.tree li .node-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.05),
+        0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    border-color: #3b82f6;
+    background: #ffffff;
+}
+
+/* Branch Highlight on Hover */
+.tree li .node-card:hover+ul li .node-card {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    box-shadow: 0 0 0 2px #bfdbfe;
+}
+
+/* Connector Highlights */
+.tree li .node-card:hover+ul li::after,
+.tree li .node-card:hover+ul li::before,
+.tree li .node-card:hover+ul::before,
+.tree li .node-card:hover+ul ul::before {
+    border-color: #3b82f6;
+    border-width: 2px;
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .tree ul {
-        flex-direction: column;
-        align-items: center;
-        padding-left: 0;
+
+    /* On mobile, we might want to keep the tree scrollable horizontally
+       OR switch to a list view. Keeping it scrollable preserves the "Tree" visualization. */
+    .org-title {
+        font-size: 2rem;
     }
 
-    .tree li {
-        padding: 20px 0 0 0;
-        width: 100%;
-    }
-
-    .tree li::before,
-    .tree li::after,
-    .tree ul ul::before {
-        display: none;
-        /* Hide complex connectors on mobile for simplicity */
-    }
-
-    .tree li div.node-card {
-        margin: 10px 0;
-        width: 80%;
+    /* Ensure cards don't shrink */
+    .tree li .node-card {
+        min-width: 240px;
     }
 }
