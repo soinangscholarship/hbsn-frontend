@@ -63,7 +63,8 @@
     "title": "Liên Hệ Với Chúng Tôi",
     "subtitle": "Chúng tôi rất mong nhận được phản hồi từ bạn",
     "form": {
-      "name": "Họ và tên",
+      "firstName": "Họ",
+      "lastName": "Tên",
       "email": "Địa chỉ Email",
       "subject": "Tiêu đề",
       "message": "Nội dung tin nhắn",

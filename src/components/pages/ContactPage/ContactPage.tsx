@@ -7,7 +7,8 @@ import contactBg from '../../../assets/contact-illustration.png';
 const ContactPage: React.FC = () => {
     const { t } = useTranslation();
     const [formData, setFormData] = useState({
-        name: '',
+        firstName: '',
+        lastName: '',
         email: '',
         subject: '',
         message: ''
@@ -43,20 +44,40 @@ const ContactPage: React.FC = () => {
                             <p>{t('contactPage.subtitle')}</p>
                         </div>
                         <form onSubmit={handleSubmit}>
-                            <div className="form-group">
-                                <label className="form-label">{t('contactPage.form.name')}</label>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    className="form-input"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    required
-                                    placeholder="Enter your name"
-                                />
+                            <div className="form-row">
+                                <div className="form-group">
+                                    <label className="form-label">
+                                        {t('contactPage.form.firstName')} <span className="required">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="firstName"
+                                        className="form-input"
+                                        value={formData.firstName}
+                                        onChange={handleChange}
+                                        required
+                                        placeholder="Enter first name"
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <label className="form-label">
+                                        {t('contactPage.form.lastName')} <span className="required">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="lastName"
+                                        className="form-input"
+                                        value={formData.lastName}
+                                        onChange={handleChange}
+                                        required
+                                        placeholder="Enter last name"
+                                    />
+                                </div>
                             </div>
                             <div className="form-group">
-                                <label className="form-label">{t('contactPage.form.email')}</label>
+                                <label className="form-label">
+                                    {t('contactPage.form.email')} <span className="required">*</span>
+                                </label>
                                 <input
                                     type="email"
                                     name="email"
@@ -68,7 +89,9 @@ const ContactPage: React.FC = () => {
                                 />
                             </div>
                             <div className="form-group">
-                                <label className="form-label">{t('contactPage.form.subject')}</label>
+                                <label className="form-label">
+                                    {t('contactPage.form.subject')} <span className="required">*</span>
+                                </label>
                                 <input
                                     type="text"
                                     name="subject"
@@ -80,7 +103,9 @@ const ContactPage: React.FC = () => {
                                 />
                             </div>
                             <div className="form-group">
-                                <label className="form-label">{t('contactPage.form.message')}</label>
+                                <label className="form-label">
+                                    {t('contactPage.form.message')} <span className="required">*</span>
+                                </label>
                                 <textarea
                                     name="message"
                                     className="form-textarea"

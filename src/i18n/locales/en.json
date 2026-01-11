@@ -63,7 +63,8 @@
     "title": "Contact Us",
     "subtitle": "We'd love to hear from you",
     "form": {
-      "name": "Your Name",
+      "firstName": "First Name",
+      "lastName": "Last Name",
       "email": "Email Address",
       "subject": "Subject",
       "message": "Message",

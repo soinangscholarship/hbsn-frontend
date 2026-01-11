@@ -78,9 +78,25 @@
     font-size: 1.1rem;
 }
 
+.form-row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
 .form-group {
     margin-bottom: 24px;
     width: 100%;
+}
+
+.required {
+    color: #e53e3e;
+    margin-left: 2px;
+    font-weight: 700;
 }
 
 .form-label {
@@ -166,6 +182,11 @@
     .contact-header {
         margin-bottom: 40px;
         padding-top: 30px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
     }
 }
 
