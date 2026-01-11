@@ -20,9 +20,10 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
+    lng: 'en', // Force default language to English
     fallbackLng: 'en',
     debug: false,
-    
+
     detection: {
       order: ['localStorage', 'navigator', 'htmlTag'],
       caches: ['localStorage'],

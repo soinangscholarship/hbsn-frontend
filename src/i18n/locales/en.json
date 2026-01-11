@@ -3,7 +3,10 @@
     "home": "Home",
     "about": "About",
     "activities": "Activities",
-    "scholarship": "Scholarship"
+    "scholarship": "Scholarship",
+    "contact": "Contact",
+    "organization": "Organization",
+    "souvenir": "Souvenir"
   },
   "hero": {
     "title": "Sợi Nắng Scholarship",
@@ -55,5 +58,24 @@
     "switch": "Switch Language",
     "english": "English",
     "vietnamese": "Tiếng Việt"
+  },
+  "contactPage": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you",
+    "form": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message"
+    }
+  },
+  "organizationPage": {
+    "title": "Organizational Structure",
+    "subtitle": "Meet the team behind Sợi Nắng"
+  },
+  "souvenirPage": {
+    "title": "Souvenirs",
+    "subtitle": "Support us by purchasing our souvenirs"
   }
 }

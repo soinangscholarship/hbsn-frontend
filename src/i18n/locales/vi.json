@@ -3,7 +3,10 @@
     "home": "Trang Chủ",
     "about": "Giới Thiệu",
     "activities": "Hoạt Động",
-    "scholarship": "Học Bổng"
+    "scholarship": "Học Bổng",
+    "contact": "Liên Hệ",
+    "organization": "Tổ Chức",
+    "souvenir": "Lưu Niệm"
   },
   "hero": {
     "title": "Học Bổng Sợi Nắng",
@@ -55,5 +58,24 @@
     "switch": "Chuyển Đổi Ngôn Ngữ",
     "english": "English",
     "vietnamese": "Tiếng Việt"
+  },
+  "contactPage": {
+    "title": "Liên Hệ Với Chúng Tôi",
+    "subtitle": "Chúng tôi rất mong nhận được phản hồi từ bạn",
+    "form": {
+      "name": "Họ và tên",
+      "email": "Địa chỉ Email",
+      "subject": "Tiêu đề",
+      "message": "Nội dung tin nhắn",
+      "submit": "Gửi Tin Nhắn"
+    }
+  },
+  "organizationPage": {
+    "title": "Cơ Cấu Tổ Chức",
+    "subtitle": "Gặp gỡ đội ngũ đứng sau Sợi Nắng"
+  },
+  "souvenirPage": {
+    "title": "Lưu Niệm",
+    "subtitle": "Ủng hộ chúng tôi bằng cách mua quà lưu niệm"
   }
 }
