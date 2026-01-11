@@ -5,6 +5,9 @@ import Footer from "./components/layout/Footer/Footer";
 import ScholarshipPage from "./components/pages/ScholarshipPage/ScholarshipPage";
 import AboutPage from "./components/pages/AboutPage/AboutPage";
 import ActivitiesPage from "./components/pages/ActivitiesPage/ActivitiesPage";
+import ContactPage from "./components/pages/ContactPage/ContactPage";
+import OrganizationPage from "./components/pages/OrganizationPage/OrganizationPage";
+import SouvenirPage from "./components/pages/SouvenirPage/SouvenirPage";
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/scholarship" element={<ScholarshipPage />} />
           <Route path="/activities" element={<ActivitiesPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/organization" element={<OrganizationPage />} />
+          <Route path="/souvenir" element={<SouvenirPage />} />
         </Routes>
       </main>
       <Footer />
