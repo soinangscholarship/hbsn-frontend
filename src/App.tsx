@@ -8,6 +8,9 @@ import ActivitiesPage from "./components/pages/ActivitiesPage/ActivitiesPage";
 import ContactPage from "./components/pages/ContactPage/ContactPage";
 import OrganizationPage from "./components/pages/OrganizationPage/OrganizationPage";
 import SouvenirPage from "./components/pages/SouvenirPage/SouvenirPage";
+import { ProtectedRoute } from "./components/common/ProtectedRoute";
+import { LoginPage } from "./components/pages/Login/LoginPage";
+import { UsersPage } from "./components/pages/Users/UsersPage";
 
 function App() {
   return (
@@ -15,7 +18,16 @@ function App() {
       <NavBar />
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/" element={<Navigate to="/users" />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route
+            path="/users"
+            element={
+              <ProtectedRoute>
+                <UsersPage />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/home" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/scholarship" element={<ScholarshipPage />} />
