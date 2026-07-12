@@ -59,6 +59,33 @@
   gap: 20px;
 }
 
+.navbar-auth-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;         
+  background: rgba(191, 198, 212, 0.2);
+  padding: 5px 6px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(123, 122, 128, 0.2);
+}
+
+
+.navbar-auth-box a {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
 .navbar-links {
   display: flex;
   gap: 6px;
@@ -250,6 +277,20 @@
     width: auto;
     gap: 15px;
   }
+
+  .navbar-auth-box {
+    right: 60px !important;
+    padding: 3px;
+    gap: 4px;
+  }
+  .navbar-auth-box a {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+  }
+
+
+
+  
 
   .navbar-logo-group {
     flex-direction: row;

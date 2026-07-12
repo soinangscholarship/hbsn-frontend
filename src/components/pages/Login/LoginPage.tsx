@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link} from "react-router-dom";
 import { login } from "../../../auth/authApi";
 import { Button } from "@base-ui/react/button";
 import { Input } from "@base-ui/react/input";
@@ -75,6 +75,7 @@ export function LoginPage() {
                 className="h-12 px-4 rounded-xl w-full border border-gray-300 focus-visible:border-gray-500"
               />
             </div>
+            <p className="text-center text-sm text-red-600">{err}</p>
           </CardContent>
 
           <CardFooter className="flex flex-col space-y-4">
@@ -86,9 +87,9 @@ export function LoginPage() {
             </Button>
             <p className="text-center text-sm text-muted-foreground">
               Don&apos;t have an account?{" "}
-              <a href="#" className="text-primary hover:underline">
+              <Link to="/register" className="text-primary hover:underline">
                 Sign up
-              </a>
+              </Link>
             </p>
           </CardFooter>
         </form>

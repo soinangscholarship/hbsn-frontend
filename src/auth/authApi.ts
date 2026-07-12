@@ -8,6 +8,14 @@ export async function login(username: string, password: string) {
   localStorage.setItem("token", data.token);
 }
 
+export async function register(username: string, email: string, password: string) {
+  await api.post("/auth/register", {
+    username,
+    email,
+    password,
+  });
+}
+
 export function logout() {
   localStorage.removeItem("token");
 }

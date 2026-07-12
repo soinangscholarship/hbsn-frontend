@@ -11,6 +11,7 @@ import SouvenirPage from "./components/pages/SouvenirPage/SouvenirPage";
 import { ProtectedRoute } from "./components/common/ProtectedRoute";
 import { LoginPage } from "./components/pages/Login/LoginPage";
 import { UsersPage } from "./components/pages/Users/UsersPage";
+import { RegisterPage } from "./components/pages/Register/RegisterPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route
             path="/users"
             element={
