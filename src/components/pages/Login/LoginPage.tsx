@@ -75,6 +75,7 @@ export function LoginPage() {
                 className="h-12 px-4 rounded-xl w-full border border-gray-300 focus-visible:border-gray-500"
               />
             </div>
+            <p className="text-center text-sm text-red-600">{err}</p>
           </CardContent>
 
           <CardFooter className="flex flex-col space-y-4">
