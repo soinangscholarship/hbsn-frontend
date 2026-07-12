@@ -6,13 +6,18 @@
     "scholarship": "Học Bổng",
     "contact": "Liên Hệ",
     "organization": "Tổ Chức",
-    "souvenir": "Lưu Niệm"
+    "souvenir": "Lưu Niệm",
+    "soinang": "Gia đình Sợi Nắng"
   },
   "hero": {
     "title": "Học Bổng Sợi Nắng",
     "subtitle": "Nuôi dưỡng những tài năng trẻ kiên cường thông qua hỗ trợ toàn diện và cố vấn",
     "learnMore": "Tìm Hiểu Thêm",
-    "applyNow": "Đăng Ký Ngay"
+    "applyNow": "Đăng Ký Ngay",
+    "mission": "Gieo Yêu Thương, Trao Hy Vọng",
+    "cta": "Kết nối, nuôi dưỡng và kiến tạo tương lai tươi sáng cho cộng đồng",
+    "donate": "Đóng góp",
+    "detail": "Thông tin thêm"
   },
   "mission": {
     "title": "Sứ Mệnh Của Chúng Tôi",

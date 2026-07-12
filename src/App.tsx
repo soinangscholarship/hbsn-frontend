@@ -18,7 +18,7 @@ function App() {
       <NavBar />
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<Navigate to="/users" />} />
+          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/login" element={<LoginPage />} />
           <Route
             path="/users"

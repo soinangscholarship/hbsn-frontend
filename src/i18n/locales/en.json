@@ -6,11 +6,16 @@
     "scholarship": "Scholarship",
     "contact": "Contact",
     "organization": "Organization",
-    "souvenir": "Souvenir"
+    "souvenir": "Souvenir",
+    "soinang": "Sợi Nắng Family"
   },
   "hero": {
     "title": "Sợi Nắng Scholarship",
     "subtitle": "Nurturing resilient young talents through comprehensive support and mentorship",
+    "mission": "Sharing Love, Nurturing Dreams",
+    "cta": "Together, we light the way to a brighter future",
+    "donate": "Support Us",
+    "detail": "More Information",
     "learnMore": "Learn More",
     "applyNow": "Apply Now"
   },
