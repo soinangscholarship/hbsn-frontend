@@ -67,7 +67,9 @@ const NavBar: React.FC = () => {
             </Link>
           ))}
         </div>
+
         <div className="navbar-right">
+          
           <LanguageSwitcher />
           <button
             className={`navbar-hamburger ${isMenuOpen ? "active" : ""}`}
@@ -79,6 +81,11 @@ const NavBar: React.FC = () => {
             </span>
           </button>
         </div>
+
+        <div className="navbar-auth-box">
+          <Link to="/login" className="navbar-links">Sign In</Link>
+        </div>
+
       </nav>
     </>
   );
