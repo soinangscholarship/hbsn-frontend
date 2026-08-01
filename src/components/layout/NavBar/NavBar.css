@@ -279,9 +279,8 @@
   }
 
   .navbar-auth-box {
-    right: 60px !important;
+    right: 60px;
     padding: 3px;
-    gap: 4px;
   }
   .navbar-auth-box a {
     padding: 4px 10px;

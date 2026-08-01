@@ -84,7 +84,6 @@ const NavBar: React.FC = () => {
 
         <div className="navbar-auth-box">
           <Link to="/login" className="navbar-links">Sign In</Link>
-          <Link to="/register" className="navbar-links">Sign Up</Link>
         </div>
 
       </nav>
